@@ -1,8 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap');
 * {
-    
+    font-family: "Comfortaa", sans-serif;
 }
 body {
-    background: #505254;
+    background: gray;
     background-size: 100%;
 }
 .head {
@@ -14,7 +15,7 @@ body {
     margin-left: 40px;
     padding: 7px 10px 5px 10px;
     border-radius: 8px;
-    background-color: whitesmoke;
+    background-color: gainsboro;
     transition: box-shadow .6s;
 }
 .social--icon {
@@ -28,7 +29,7 @@ body {
     margin-bottom: 15px;
     margin-top: 15px;
     padding: 7px 10px 5px 10px;
-    background-color: whitesmoke;
+    background-color: gainsboro;
     border-radius: 8px;
     transition: box-shadow .6s;
 }
@@ -52,7 +53,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 39vw;
-    margin: 10px 10px 10px 10px;
+    margin: 10px 10px 25px 10px;
     background-color: #3e4042;
     background-size: 100%;
 }
@@ -69,12 +70,13 @@ body {
     transition: background-color .3s, box-shadow .3s, border-color .3s;
 }
 #main--button:hover {
+    background-color: red;
     border-color: red;
     box-shadow: 0 0 30px 1px red;
-    background-color: red;
 }
 #main--label {
     font-size: large;
+    color: whitesmoke;
 }
 .foot {
     display: flex;
@@ -84,8 +86,29 @@ body {
     border-radius: 8px;
     margin: 0 10px 0 10px;
     border-color: whitesmoke;
-    background-color: whitesmoke;
+    background-color: gainsboro;
     padding: 10px 0 10px 0;
+}
+#copyright--table {
+    height: 50px;
+}
+#copyright {
+    transition: .3s;
+    opacity: 50%;
+    text-decoration: none;
+    color: black;
+}
+#copyright:hover {
+    opacity: 1;
+}
+.foot--link {
+    transition: .3s;
+    color: black;
+    text-decoration: none;
+    opacity: 50%;
+}
+.foot--link:hover {
+    opacity: 1;
 }
 #footer {
     align-items: inherit;
