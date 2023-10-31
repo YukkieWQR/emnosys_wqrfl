@@ -3,7 +3,7 @@
     font-family: "Comfortaa", sans-serif;
 }
 body {
-    background: gray;
+    background: #535353;
     background-size: 100%;
 }
 .head {
@@ -15,26 +15,26 @@ body {
     margin-left: 40px;
     padding: 7px 10px 5px 10px;
     border-radius: 8px;
-    background-color: gainsboro;
+    background-color: #52b9d5;
     transition: box-shadow .6s;
 }
 .social--icon {
     border-radius: 50%;
 }
 .social:hover {
-    box-shadow: 0 0 15px 1px whitesmoke;
+    box-shadow: 0 0 15px 1px #737373;
 }
 .user {
     margin-right: 40px;
     margin-bottom: 15px;
     margin-top: 15px;
     padding: 7px 10px 5px 10px;
-    background-color: gainsboro;
+    background-color: #52b9d5;
     border-radius: 8px;
     transition: box-shadow .6s;
 }
 .user:hover {
-    box-shadow: 0 0 15px 1px whitesmoke;
+    box-shadow: 0 0 15px 1px #737373;
 }
 #user--label {
     display: inline-block;
@@ -54,11 +54,11 @@ body {
     align-items: center;
     height: 39vw;
     margin: 10px 10px 25px 10px;
-    background-color: #3e4042;
+    background-color: #5a5a5a;
     background-size: 100%;
 }
 #main--button {
-    background-color: red;
+    background-color: #52b9d5;
     justify-content: inherit;
     align-items: inherit;
     width: 200px;
@@ -66,17 +66,17 @@ body {
     margin: 0 0 20px 0;
     border-radius: 50%;
     border-style: solid;
-    border-color: #3e4042;
+    border-color: #52b9d5;
     transition: background-color .3s, box-shadow .3s, border-color .3s;
 }
 #main--button:hover {
-    background-color: red;
-    border-color: red;
-    box-shadow: 0 0 30px 1px red;
+    background-color: #52b9d5;
+    border-color: #52b9d5;
+    box-shadow: 0 0 30px 1px #52b9d5;
 }
 #main--label {
     font-size: large;
-    color: whitesmoke;
+    color: white;
 }
 .foot {
     display: flex;
@@ -85,8 +85,8 @@ body {
     text-align: center;
     border-radius: 8px;
     margin: 0 10px 0 10px;
-    border-color: whitesmoke;
-    background-color: gainsboro;
+    border-color: #52b9d5;
+    background-color: #52b9d5;
     padding: 10px 0 10px 0;
 }
 #copyright--table {
