@@ -3,7 +3,7 @@
     font-family: "Comfortaa", sans-serif;
 }
 body {
-    background: rgb(172, 172, 172);
+    background: #535353;
     background-size: 100%;
 }
 .head {
@@ -15,26 +15,26 @@ body {
     margin-left: 40px;
     padding: 7px 10px 5px 10px;
     border-radius: 8px;
-    background-color: rgb(255, 255, 255);
+    background-color: #52b9d5;
     transition: box-shadow .6s;
 }
 .social--icon {
     border-radius: 50%;
 }
 .social:hover {
-    box-shadow: 0 0 15px 1px white;
+    box-shadow: 0 0 15px 1px #737373;
 }
 .user {
     margin-right: 40px;
     margin-bottom: 15px;
     margin-top: 15px;
     padding: 7px 10px 5px 10px;
-    background-color: rgb(255, 255, 255);
+    background-color: #52b9d5;
     border-radius: 8px;
     transition: box-shadow .6s;
 }
 .user:hover {
-    box-shadow: 0 0 15px 1px white;
+    box-shadow: 0 0 15px 1px #737373;
 }
 #user--label {
     display: inline-block;
@@ -54,7 +54,7 @@ body {
     align-items: center;
     height: 39vw;
     margin: 10px 10px 25px 10px;
-    background-color: #0000002f;
+    background-color: #5a5a5a;
     background-size: 100%;
 }
 #main--button {
@@ -85,8 +85,8 @@ body {
     text-align: center;
     border-radius: 8px;
     margin: 0 10px 0 10px;
-    border-color: rgb(255, 255, 255);
-    background-color: rgb(255, 255, 255);
+    border-color: #52b9d5;
+    background-color: #52b9d5;
     padding: 10px 0 10px 0;
 }
 #copyright--table {
