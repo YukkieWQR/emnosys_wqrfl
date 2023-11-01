@@ -15,7 +15,7 @@ body {
     margin-left: 40px;
     padding: 7px 10px 5px 10px;
     border-radius: 8px;
-    background-color: #52b9d5;
+    background-color: rgba(82,185,213,0.9);
     transition: box-shadow .6s;
 }
 .social--icon {
@@ -29,7 +29,7 @@ body {
     margin-bottom: 15px;
     margin-top: 15px;
     padding: 7px 10px 5px 10px;
-    background-color: #52b9d5;
+    background-color: rgba(82,185,213,0.9);
     border-radius: 8px;
     transition: box-shadow .6s;
 }
@@ -54,11 +54,11 @@ body {
     align-items: center;
     height: 39vw;
     margin: 10px 10px 25px 10px;
-    background-color: #5a5a5a;
+    background-color: rgba(90, 90, 90, 0.7);
     background-size: 100%;
 }
 #main--button {
-    background-color: #52b9d5;
+    background-color:rgb(82, 185, 213);
     justify-content: inherit;
     align-items: inherit;
     width: 200px;
@@ -78,6 +78,40 @@ body {
     font-size: large;
     color: white;
 }
+.waves {
+    background: url(../../../images/waves.png)no-repeat;
+    display: block;
+    background-size: auto;
+    position: absolute;
+    z-index: -1;
+    float: left;
+    left: 0;
+    background-size: 100% 800px;
+    width: 100%;
+    top: 280px;
+    min-width: 1000px;
+    overflow-y: hidden;
+}
+@media (min-width: 1366px), (min-height: 768px) {
+    .waves {
+        height: 600px;
+    }
+}
+@media (min-width: 1920px), (min-height: 1080px) {
+    .waves {
+        height: 800px;
+    }
+}
+@media (min-width: 2048px), (min-height: 1080px) {
+    .waves {
+        top: 500px;
+    }
+}
+@media (min-width: 4096px), (min-height: 2160px) {
+    .waves {
+        top: 1000px;
+    }
+}
 .foot {
     display: flex;
     height: 150px;
@@ -86,7 +120,7 @@ body {
     border-radius: 8px;
     margin: 0 10px 0 10px;
     border-color: #52b9d5;
-    background-color: #52b9d5;
+    background-color: rgba(82,185,213,0.9);
     padding: 10px 0 10px 0;
 }
 #copyright--table {
