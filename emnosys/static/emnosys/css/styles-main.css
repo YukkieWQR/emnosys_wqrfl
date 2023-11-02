@@ -16,13 +16,14 @@ body {
     padding: 7px 10px 5px 10px;
     border-radius: 8px;
     background-color: rgba(82,185,213,0.9);
+    box-shadow: 0 0 20px 1px rgba(82,185,213,0.9);
     transition: box-shadow .6s;
 }
 .social--icon {
     border-radius: 50%;
 }
 .social:hover {
-    box-shadow: 0 0 15px 1px #737373;
+    box-shadow: 0 0 35px 1px rgba(82,185,213,0.9);
 }
 .user {
     margin-right: 40px;
@@ -31,10 +32,11 @@ body {
     padding: 7px 10px 5px 10px;
     background-color: rgba(82,185,213,0.9);
     border-radius: 8px;
+    box-shadow: 0 0 20px 1px rgba(82,185,213,0.9);
     transition: box-shadow .6s;
 }
 .user:hover {
-    box-shadow: 0 0 15px 1px #737373;
+    box-shadow: 0 0 35px 1px rgba(82,185,213,0.9);
 }
 #user--label {
     display: inline-block;
@@ -56,6 +58,7 @@ body {
     margin: 10px 10px 25px 10px;
     background-color: rgba(90, 90, 90, 0.7);
     background-size: 100%;
+    box-shadow: 0 0 20px 1px rgba(90, 90, 90, 0.7);
 }
 #main--button {
     background-color:rgb(82, 185, 213);
@@ -67,6 +70,7 @@ body {
     border-radius: 50%;
     border-style: solid;
     border-color: #52b9d5;
+    box-shadow: 0 0 15px 1px #52b9d5;
     transition: background-color .3s, box-shadow .3s, border-color .3s;
 }
 #main--button:hover {
@@ -79,7 +83,7 @@ body {
     color: white;
 }
 .waves {
-    background: url(../../../images/waves.png)no-repeat;
+    background: url(../images/waves.png)no-repeat;
     display: block;
     background-size: auto;
     position: absolute;
@@ -122,6 +126,7 @@ body {
     border-color: #52b9d5;
     background-color: rgba(82,185,213,0.9);
     padding: 10px 0 10px 0;
+    box-shadow: 0 0 20px 1px #52b9d5;
 }
 #copyright--table {
     height: 50px;
