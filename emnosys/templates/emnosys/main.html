@@ -14,11 +14,18 @@
             <a href="http://"><img src="https://dummyimage.com/50x50" alt="" class="social--icon"></a>
             <a href="http://"><img src="https://dummyimage.com/50x50" alt="" class="social--icon"></a>
         </div>
-        <div class="user">
-            <label id="user--label">UserName</label>
-            <a href="http://"><img src="https://dummyimage.com/50x50" alt="" id="user--icon"></a>
+        {$ if () $}
+            <div class="user">
+                <label id="user--label">UserName</label>
+                <a href="http://"><img src="https://dummyimage.com/50x50" alt="" id="user--icon"></a>
+            </div>
+        {$ else $}
+            <div class="user">
+                <label id="user--label">Login</label>
+                <a href="login.html"><img src="https://dummyimage.com/50x50" alt="" id="user--icon"></a>
+            </div>
+        {$ endif $}
         </div>
-    </div>
     <div class="main">
         <button type="submit" id="main--button"></button>
         <p id="main--label">BUTTON</p>

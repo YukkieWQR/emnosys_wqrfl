@@ -35,18 +35,21 @@ input {
     border-bottom: 2px solid white;
 }
 .username,
-.email,
-.password {
+.email {
     display: flex;
     flex-direction: column;
     margin: 0 0 15px 0;
 }
+.password {
+    display: flex;
+    flex-direction: column;
+}
 .foot {
     font-size: 95%;
-    padding: 8px 0 20px 0;
+    padding: 0 0 20px 0;
 }
 #register-link {
-    margin: 0 0 0 30px;
+    margin: 0 0 0 0;
     opacity: 50%;
     text-decoration: solid;
     color: black;
@@ -54,9 +57,6 @@ input {
 }
 #register-link:hover {
     opacity: 1;
-}
-#remember-me {
-    border-style: solid;
 }
 #login,
 #password,
@@ -67,6 +67,7 @@ input {
     padding-bottom: 5px;
     caret-color: rgba(82,185,213, 0);
 }
+
 #label1,
 #label2,
 #label3 {
