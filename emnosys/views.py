@@ -5,6 +5,17 @@ from django.views.generic.edit import CreateView
 from django.urls import reverse_lazy
 from .forms import UserRegisterForm
 
+from django.http import HttpResponse
+from django.contrib.auth.decorators import login_required
+
+@login_required
+def auth_check(request):
+    if request.user.is_authenticated:
+        user_auth = True
+        return user_auth
+    else:
+        user_auth = False
+        return user_auth
 
 
 class Main(TemplateView):
@@ -14,7 +25,6 @@ class Main(TemplateView):
         context = super().get_context_data(**kwargs)
         context['css_file'] = 'styles.css'
         return context
-
 
 
 
