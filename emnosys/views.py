@@ -5,7 +5,6 @@ from django.views.generic.edit import CreateView
 from django.urls import reverse_lazy
 from .forms import UserRegisterForm
 
-user_status = request.user.is_aunteficated
 
 
 class Main(TemplateView):
