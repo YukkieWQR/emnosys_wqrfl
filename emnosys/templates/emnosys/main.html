@@ -9,11 +9,7 @@
 </head>
 <body>
     <div class="head">
-        <div class="social">
-            <a href="http://"><img src="https://dummyimage.com/50x50" alt="" class="social--icon"></a>
-            <a href="http://"><img src="https://dummyimage.com/50x50" alt="" class="social--icon"></a>
-            <a href="http://"><img src="https://dummyimage.com/50x50" alt="" class="social--icon"></a>
-        </div>
+        
 
         {% if user_auth == True %}
         
@@ -24,10 +20,8 @@
 
         {% else %}
 
-            <div class="user">
-                <label id="user--label">Login</label>
-                <a href="login.html"><img src="https://dummyimage.com/50x50" alt="" id="user--icon"></a>
-            </div>
+                <a href="/signup/" class="user--auth">Login</a>
+                <a href="/register/" class="user--auth">Register</a>
 
         {% endif %}
 
