@@ -8,8 +8,8 @@ body {
 }
 .head {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    width: 100%;
 }
 .social {
     margin-left: 40px;
@@ -26,7 +26,6 @@ body {
     box-shadow: 0 0 35px 1px rgba(82,185,213,0.9);
 }
 .user {
-    justify-content: right;
     margin-right: 40px;
     margin-bottom: 15px;
     margin-top: 15px;
@@ -47,27 +46,7 @@ body {
 #user--icon {
     border-radius: 50%;
 }
-.user--auth {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    margin-inline: 10px;
-    font-size: x-large;
-    margin-bottom: 15px;
-    margin-top: 15px;
-    padding: 7px 10px 7px 10px;
-    color: black;
-    text-decoration: none;
-    width: 150px;
-    height: 52px;
-    background-color: rgba(82,185,213,0.9);
-    border-radius: 8px;
-    box-shadow: 0 0 20px 1px rgba(82,185,213,0.9);
-    transition: box-shadow .6s;
-}
-.user--auth:hover {
-    box-shadow: 0 0 35px 1px rgba(82,185,213,0.9);
-}
+
 .main {
     border-radius: 8px;
     display: flex;
