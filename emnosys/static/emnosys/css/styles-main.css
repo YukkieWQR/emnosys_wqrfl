@@ -54,6 +54,8 @@ body {
     border-radius: 8px;
     margin-left: 40px;
     margin-right: 40px;
+    margin-top: 15px;
+    margin-bottom: 15px;
     background: rgba(82,185,213,0.9);
     color: black;
     font-size: x-large;
