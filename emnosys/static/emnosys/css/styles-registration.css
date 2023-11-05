@@ -18,8 +18,8 @@ h3 {
     margin-right: -50%;
     transform: translate(-50%, -50%);
     flex-direction: column;
-    width: 350px;
-    height: 350px;
+    width: 400px;
+    height: 400px;
     border-radius: 8px;
     background-color: rgba(82,185,213,0.7);
     border-color: rgba(82,185,213,0.7);
@@ -70,12 +70,13 @@ input {
 
 #label1,
 #label2,
-#label3 {
+#label3,
+#label4 {
     position: relative;
     color: black;
     opacity: 1;
     font-size: 90%;
-    width: 1px;
+    width: 200px;
     height: 20px;
     top: -40px;
     left: 5px;
@@ -92,7 +93,8 @@ input {
 }
 #password:placeholder-shown ~ #label2,
 #login:placeholder-shown ~ #label1,
-#email:placeholder-shown ~ #label3 {
+#email:placeholder-shown ~ #label3,
+#password:placeholder-shown ~ #label4 {
     top: -20px;
     opacity: 0.5;
 }
