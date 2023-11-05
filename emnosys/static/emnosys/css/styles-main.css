@@ -46,7 +46,25 @@ body {
 #user--icon {
     border-radius: 50%;
 }
-
+.user--auth {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    margin-inline: -110px;
+    background: rgba(82,185,213,0.9);
+    color: black;
+    font-size: x-large;
+    text-decoration: none;
+    width: 200px;
+    height: 66px;
+    box-shadow: 0 0 20px 1px rgba(82,185,213,0.9);
+    transition: box-shadow .6s;
+}
+.user--auth:hover {
+    box-shadow: 0 0 35px 1px rgba(82,185,213,0.9);
+}
 .main {
     border-radius: 8px;
     display: flex;
