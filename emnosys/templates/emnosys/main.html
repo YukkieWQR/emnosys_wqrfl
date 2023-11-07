@@ -10,7 +10,7 @@
 <body>
     <div class="head">
         
-        {% if user_auth == True %}
+        {% if user.is_authenticated %}
         
             <div class="user">
                 <label id="user--label">UserName</label>
@@ -19,8 +19,8 @@
 
         {% else %}
 
-                <a href="/signup/" class="user--auth">Login</a>
-                <a href="/register/" class="user--auth">Register</a>
+                <a href="/signin/" class="user--auth">Login</a>
+                <a href="/registration/" class="user--auth">Register</a>
 
         {% endif %}
 

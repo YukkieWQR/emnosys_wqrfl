@@ -11,35 +11,24 @@
     <form action="">
         <div class="login">
             <h3>Registration</h3>
-            <div class="username">
-                <input type="text" id="login" placeholder=" " autocomplete="off">
-                <label for="#login" id="label1">Username</label>
-            </div>
-            
-            <div class="email">
-                <input type="email" id="email" placeholder=" " autocomplete="off">
-                <label for="#email" id="label3">Email</label>
-            </div>
-    
-            <div class="password">
-                <input type="password" id="password" placeholder=" " autocomplete="off">
-                <label for="#password" id="label2">Password</label>
-            </div>
-            
-            <div class="password">
-                <input type="password" id="password" placeholder=" " autocomplete="off">
-                <label for="#password" id="label4">Repeat password</label>
-            </div>
 
-            <div class="foot">
-                <a href="login.html" id="register-link">Have an account?</a>
-            </div>
-    
-            <div class="submit">
-                <button type="submit" id="submit--button">
-                   Submit
-                </button>
-            </div>
+            <form action="/signup" method="post">
+            {% csrf_token %}
+                <label for="">Username</label>
+                <input type="text" id="username" name="username" placeholder="write username">
+                <br>
+                <label for="">Email</label>
+                <input type="text" id="email" name="username" placeholder="write email">
+                <br>
+                <label for="">Password</label>
+                <input type="text" id="password1" name="username" placeholder="write password">
+                <br>
+                <label for="">Confirm your password</label>
+                <input type="text" id="password2" name="username" placeholder="confirm your password">
+                <br>
+                <button type="sumbit">Sign Up</button>
+            </form>
+
         </div>
         <div class="waves">
             <img src="../../static/emnosys/images/waves.png" alt="">

@@ -3,19 +3,12 @@ from django.views.generic import TemplateView
 from django.contrib.messages.views import SuccessMessageMixin
 from django.views.generic.edit import CreateView
 from django.urls import reverse_lazy
-from .forms import UserRegisterForm
-
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
+from django.contrib import messages
+from django.contrib.auth import authenticate, login
 
-@login_required
-def auth_check(request):
-    if request.user.is_authenticated:
-        user_auth = True
-        return user_auth
-    else:
-        user_auth = False
-        return user_auth
 
 
 class Main(TemplateView):
@@ -26,23 +19,44 @@ class Main(TemplateView):
         context['css_file'] = 'styles.css'
         return context
 
+#################################
+####################################
+#################################
+
+
+def Registration(request):
+    if request.method == "POST":
+        username = request.POST['username']
+        email = request.POST['email']
+        password1 = request.POST['password1']
+        password2 = request.POST['password2']
+
+        myuser = User.objects.create_user(username, emnail, password1)
+        myuser.save()
+
+        messages.succes(request, "Account created")
+        return redirect('emnosys/signin')
+    return render(request, "emnosys/registration.html")
+
+def signin(request):
+
+    if request.method == 'POST':
+        username = request.POST['username']
+        password1 = request.POST['pass1']
+
+        user = authenticate(username=username, password=password1)
+
+        if user is not None:
+            login(request, user)
+            return render(request, "authentication/index.html")
+        else:
+            messages.error(request, "Bad Creditals")
+            return redirect('home')
+    return render(request, "emnosys/signin.html")
 
 
 
-class SignUpView(SuccessMessageMixin, CreateView):
-    template_name = 'emnosys/login.html'
-    success_url = reverse_lazy('login')
-    form_class = UserRegisterForm
-    success_message = "Your profile was logged in to your account successfully"
 
 
-
-
-
-class RegisterView(SuccessMessageMixin, CreateView):
-    form_class = UserRegisterForm
-    success_url = reverse_lazy('')
-    template_name = 'emnosys/registration.html'
-    success_message = "Your profile was created successfully"
-
-
+def signout(request):
+    pass
