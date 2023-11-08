@@ -6,10 +6,9 @@ from django.urls import reverse_lazy
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-from django.contrib import messages
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, logout
 
-
+####################################################
 
 class Main(TemplateView):
     template_name = 'emnosys/main.html'
@@ -19,9 +18,8 @@ class Main(TemplateView):
         context['css_file'] = 'styles.css'
         return context
 
-#################################
-####################################
-#################################
+###################################################
+
 
 
 def Registration(request):
@@ -31,12 +29,13 @@ def Registration(request):
         password1 = request.POST['password1']
         password2 = request.POST['password2']
 
-        myuser = User.objects.create_user(username, emnail, password1)
+        myuser = User.objects.create_user(username, email, password1)
         myuser.save()
 
-        messages.succes(request, "Account created")
-        return redirect('emnosys/signin')
+        return redirect('signin')
     return render(request, "emnosys/registration.html")
+
+###############################################
 
 def signin(request):
 
@@ -50,13 +49,11 @@ def signin(request):
             login(request, user)
             return render(request, "authentication/index.html")
         else:
-            messages.error(request, "Bad Creditals")
             return redirect('home')
     return render(request, "emnosys/signin.html")
 
-
-
-
+################################################
 
 def signout(request):
-    pass
+    logout(request)
+    return redirect('home')

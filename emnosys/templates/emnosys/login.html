@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,19 +9,20 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="">
+    <form action="" method="post">
+     {% csrf_token %}
         <div class="login">
                 <h3>Login</h3>
                 <div class="username">
-                    <input type="text" id="login" placeholder=" " autocomplete="off">
+                    <input type="text" id="login" name="username" placeholder=" " autocomplete="off">
                     <label for="#login" id="label1">Username</label>
                 </div>
-                
+
                 <div class="password">
-                    <input type="password" id="password" placeholder=" " autocomplete="off">
+                    <input type="password" id="password" name="pass1"  placeholder=" " autocomplete="off">
                     <label for="#password" id="label2">Password</label>
                 </div>
-                
+
                 <div class="foot">
                     <input type="checkbox" name="" id="remember-me">
                     <label for="#register-link">Remember me</label>

@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,23 +7,22 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="">
         <div class="login">
             <h3>Registration</h3>
 
-            <form action="/signup" method="post">
+            <form action="" method="post">
             {% csrf_token %}
                 <label for="">Username</label>
                 <input type="text" id="username" name="username" placeholder="write username">
                 <br>
                 <label for="">Email</label>
-                <input type="text" id="email" name="username" placeholder="write email">
+                <input type="text" id="email" name="email" placeholder="write email">
                 <br>
                 <label for="">Password</label>
-                <input type="text" id="password1" name="username" placeholder="write password">
+                <input type="text" id="password1" name="password1" placeholder="write password">
                 <br>
                 <label for="">Confirm your password</label>
-                <input type="text" id="password2" name="username" placeholder="confirm your password">
+                <input type="text" id="password2" name="password2" placeholder="confirm your password">
                 <br>
                 <button type="sumbit">Sign Up</button>
             </form>
@@ -33,7 +31,6 @@
         <div class="waves">
             <img src="../../static/emnosys/images/waves.png" alt="">
         </div>
-    </form>
     
 </body>
 </html>
