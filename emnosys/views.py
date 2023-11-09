@@ -7,7 +7,7 @@ from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
-
+from django.contrib import messages
 ####################################################
 
 class Main(TemplateView):
@@ -47,9 +47,9 @@ def signin(request):
 
         if user is not None:
             login(request, user)
-            return render(request, "authentication/index.html")
+            return render(request, "emnosys/main.html")
         else:
-            return redirect('home')
+            return redirect('signin')
     return render(request, "emnosys/signin.html")
 
 ################################################
