@@ -28,77 +28,53 @@ h3 {
     align-items: center;
     justify-content: center;
 }
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 input {
-    border-style: none;
-    border-color: rgba(82,185,213,0.7);
-    background: rgba(82,185,213,0);
-    border-bottom: 2px solid white;
-}
-.username,
-.email {
-    display: flex;
-    flex-direction: column;
-    margin: 0 0 15px 0;
-}
-.password {
-    display: flex;
-    flex-direction: column;
-}
-.foot {
-    font-size: 95%;
-    padding: 0 0 20px 0;
-}
-#register-link {
-    margin: 0 0 0 0;
-    opacity: 50%;
-    text-decoration: solid;
-    color: black;
-    transition: opacity .3s;
-}
-#register-link:hover {
-    opacity: 1;
-}
-#login,
-#password,
-#email {
-    margin-top: 5px;
-    width: 230px;
+    background-color: rgba(82,185,213,0);
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0);
+    border-bottom-color: white;
     outline: none;
-    padding-bottom: 5px;
-    caret-color: rgba(82,185,213, 0);
+    margin: 5px 0 5px 0;
+    width: 250px;
 }
-
-#label1,
-#label2,
-#label3,
-#label4 {
+#username--label {
     position: relative;
+    right: 70px;
+    top: 20px;
     color: black;
-    opacity: 1;
-    font-size: 90%;
-    width: 200px;
-    height: 20px;
-    top: -40px;
-    left: 5px;
-    pointer-events: none;
-    transition: top .3s, opacity .3s;
-    animation: filled;
+    opacity: 50%;
 }
-@media (min-width: 1920px), (min-height: 1080px) {
-    .waves {
-        position: relative;
-        top: 100px;
-        z-index: -1;
-    }
+#email--label {
+    position: relative;
+    right: 89px;
+    top: 20px;
+    color: black;
+    opacity: 50%;
 }
-#password:placeholder-shown ~ #label2,
-#login:placeholder-shown ~ #label1,
-#email:placeholder-shown ~ #label3,
-#password:placeholder-shown ~ #label4 {
-    top: -20px;
-    opacity: 0.5;
+#password1--label {
+    position: relative;
+    right: 73px;
+    top: 20px;
+    color: black;
+    opacity: 50%;
 }
-#submit--button {
+#password2--label {
+    position: relative;
+    right: 16px;
+    top: 20px;
+    color: black;
+    opacity: 50%;
+}
+#password2 {
+    margin-bottom: 30px;
+}
+button {
     width: 300px;
     height: 50px;
     border-radius: 8px;
@@ -106,8 +82,4 @@ input {
     background-color: white;
     transition: box-shadow .3s;
     font-size: medium;
-}
-#submit--button:hover {
-    background-color: white;
-    box-shadow: 0 0 15px 1px white;
 }

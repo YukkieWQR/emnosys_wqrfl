@@ -10,19 +10,19 @@
         <div class="login">
             <h3>Registration</h3>
 
-            <form action="" method="post">
+            <form action="" method="post" class="form">
             {% csrf_token %}
-                <label for="">Username</label>
-                <input type="text" id="username" name="username" placeholder="write username">
+                <label for="#username" id="username--label">Username</label>
+                <input type="text" id="username" name="username" placeholder=" ">
                 <br>
-                <label for="">Email</label>
-                <input type="text" id="email" name="email" placeholder="write email">
+                <label for="" id="email--label">Email</label>
+                <input type="text" id="email" name="email" placeholder=" ">
                 <br>
-                <label for="">Password</label>
-                <input type="text" id="password1" name="password1" placeholder="write password">
+                <label for="" id="password1--label">Password</label>
+                <input type="text" id="password1" name="password1" placeholder=" ">
                 <br>
-                <label for="">Confirm your password</label>
-                <input type="text" id="password2" name="password2" placeholder="confirm your password">
+                <label for="" id="password2--label">Confirm your password</label>
+                <input type="text" id="password2" name="password2" placeholder=" ">
                 <br>
                 <button type="sumbit">Sign Up</button>
             </form>
