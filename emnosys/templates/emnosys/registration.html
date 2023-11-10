@@ -12,17 +12,25 @@
 
             <form action="" method="post" class="form">
             {% csrf_token %}
-                <label for="#username" id="username--label">Username</label>
-                <input type="text" id="username" name="username" placeholder=" ">
+                <div class="username">
+                    <input type="text" id="username" name="username" placeholder=" ">
+                    <label for="#username" id="username--label">Username</label>
+                </div>
                 <br>
-                <label for="" id="email--label">Email</label>
-                <input type="text" id="email" name="email" placeholder=" ">
+                <div class="email">
+                    <input type="text" id="email" name="email" placeholder=" ">
+                    <label for="" id="email--label">Email</label>
+                </div>
                 <br>
-                <label for="" id="password1--label">Password</label>
-                <input type="text" id="password1" name="password1" placeholder=" ">
+                <div class="password1">
+                    <input type="text" id="password1" name="password1" placeholder=" ">
+                    <label for="" id="password1--label">Password</label>
+                </div>
                 <br>
-                <label for="" id="password2--label">Confirm your password</label>
-                <input type="text" id="password2" name="password2" placeholder=" ">
+                <div class="password2">
+                    <input type="text" id="password2" name="password2" placeholder=" ">
+                    <label for="" id="password2--label">Confirm your password</label>
+                </div>
                 <br>
                 <button type="sumbit">Sign Up</button>
             </form>

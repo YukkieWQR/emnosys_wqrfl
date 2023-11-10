@@ -38,41 +38,64 @@ input {
     background-color: rgba(82,185,213,0);
     border-style: solid;
     border-color: rgba(0, 0, 0, 0);
-    border-bottom-color: white;
+    border-bottom: 2px solid white;
     outline: none;
     margin: 5px 0 5px 0;
+    padding: 0 0 5px 0;
+    font-size: medium;
     width: 250px;
 }
 #username--label {
+    pointer-events: none;
     position: relative;
-    right: 70px;
-    top: 20px;
+    top: -50px;
     color: black;
-    opacity: 50%;
+    transition: opacity .3s, top .3s;
+    animation: filled;
 }
 #email--label {
+    pointer-events: none;
     position: relative;
-    right: 89px;
-    top: 20px;
+    top: -50px;
     color: black;
-    opacity: 50%;
+    transition: opacity .3s, top .3s;
+    animation: filled;
 }
 #password1--label {
+    pointer-events: none;
     position: relative;
-    right: 73px;
-    top: 20px;
+    top: -50px;
     color: black;
-    opacity: 50%;
+    transition: opacity .3s, top .3s;
+    animation: filled;
 }
 #password2--label {
+    pointer-events: none;
     position: relative;
-    right: 16px;
-    top: 20px;
+    top: -75px;
     color: black;
-    opacity: 50%;
+    transition: opacity .3s, top .3s;
+    animation: filled;
+}
+#username:placeholder-shown ~ #username--label,
+#email:placeholder-shown ~ #email--label,
+#password1:placeholder-shown ~ #password1--label{
+    opacity: 0.5;
+    top: -30px;
+}
+#password2:placeholder-shown ~  #password2--label {
+    opacity: 0.5;
+    top: -55px;
 }
 #password2 {
     margin-bottom: 30px;
+}
+.username,
+.email,
+.password1,
+.password2 {
+    display: flex;
+    flex-direction: column;
 }
 button {
     width: 300px;

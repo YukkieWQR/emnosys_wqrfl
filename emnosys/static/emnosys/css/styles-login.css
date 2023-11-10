@@ -66,6 +66,7 @@ input {
     width: 230px;
     outline: none;
     padding-bottom: 5px;
+    font-size: medium;
     caret-color: rgba(82,185,213, 0);
 }
 #password {
@@ -73,6 +74,7 @@ input {
     width: 230px;
     outline: none;
     padding-bottom: 5px;
+    font-size: medium;
     caret-color: rgba(82,185,213, 0);
 }
 #label1,
@@ -85,6 +87,7 @@ input {
     height: 20px;
     top: -40px;
     left: 5px;
+    font-size: medium;
     pointer-events: none;
     transition: top .3s, opacity .3s;
     animation: filled;
