@@ -40,39 +40,42 @@ input {
     border-color: rgba(0, 0, 0, 0);
     border-bottom: 2px solid white;
     outline: none;
-    margin: 5px 0 5px 0;
     padding: 0 0 5px 0;
     font-size: medium;
     width: 250px;
 }
 #username--label {
+    z-index: -1;
     pointer-events: none;
     position: relative;
-    top: -50px;
+    top: -43px;
     color: black;
     transition: opacity .3s, top .3s;
     animation: filled;
 }
 #email--label {
+    z-index: -1;
     pointer-events: none;
     position: relative;
-    top: -50px;
+    top: -43px;
     color: black;
     transition: opacity .3s, top .3s;
     animation: filled;
 }
 #password1--label {
+    z-index: -1;
     pointer-events: none;
     position: relative;
-    top: -50px;
+    top: -43px;
     color: black;
     transition: opacity .3s, top .3s;
     animation: filled;
 }
 #password2--label {
+    z-index: -1;
     pointer-events: none;
     position: relative;
-    top: -75px;
+    top: -73px;
     color: black;
     transition: opacity .3s, top .3s;
     animation: filled;
@@ -81,7 +84,7 @@ input {
 #email:placeholder-shown ~ #email--label,
 #password1:placeholder-shown ~ #password1--label{
     opacity: 0.5;
-    top: -30px;
+    top: -25px;
 }
 #password2:placeholder-shown ~  #password2--label {
     opacity: 0.5;
@@ -96,6 +99,13 @@ input {
 .password2 {
     display: flex;
     flex-direction: column;
+}
+@media (min-width: 1920px), (min-height: 1080px) {
+    .waves {
+        position: relative;
+        top: 100px;
+        z-index: -1;
+    }
 }
 button {
     width: 300px;
