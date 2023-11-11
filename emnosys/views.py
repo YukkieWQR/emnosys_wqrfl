@@ -8,6 +8,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
+
 ####################################################
 
 class Main(TemplateView):
@@ -57,3 +58,13 @@ def signin(request):
 def signout(request):
     logout(request)
     return redirect('home')
+
+######################################################
+
+class PersonalPage(TemplateView):
+    template_name = 'emnosys/PersonalPage.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['css_file'] = 'styles.css'
+        return context
