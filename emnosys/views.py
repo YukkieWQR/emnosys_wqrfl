@@ -38,7 +38,7 @@ def Registration(request):
 
 ###############################################
 
-def signin(request):
+def Signin(request):
 
     if request.method == 'POST':
         username = request.POST['username']
@@ -55,14 +55,14 @@ def signin(request):
 
 ################################################
 
-def signout(request):
+def Signout(request):
     logout(request)
     return redirect('home')
 
 ######################################################
 
 class PersonalPage(TemplateView):
-    template_name = 'emnosys/PersonalPage.html'
+    template_name = 'emnosys/personalpage.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
