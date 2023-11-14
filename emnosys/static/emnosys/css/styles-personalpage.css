@@ -7,6 +7,32 @@ body {
     background-size: 100%;
     overflow: hidden;
 }
+.head {
+    height: 2vw;
+    align-items: center;
+    justify-content: left;
+    display: flex;
+
+}
+.add-contacts {
+    display: flex;
+    margin: 50px 0 20px 0;
+    background-color: rgba(82,185,213,0.7);
+    border: solid rgba(0, 0, 0, 0);
+    border-radius: 8px;
+    height: 54px;
+    width: 150px;
+    font-size: large;
+    text-decoration: none;
+    color: black;
+    align-items: center;
+    justify-content: center;
+    box-shadow:  0 0 20px 1px rgba(82,185,213,0.7);
+    transition: box-shadow .3s;
+}
+.add-contacts:hover {
+    box-shadow: 0 0 35px 1px rgba(82,185,213,0.7);
+}
 .main {
     display: flex;
     flex-direction: column;
