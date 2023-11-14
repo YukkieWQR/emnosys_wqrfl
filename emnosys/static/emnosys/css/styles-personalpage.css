@@ -23,21 +23,20 @@ body {
 .username--photo {
     border-radius: 50%;
     margin-bottom: 20px;
+    height: 200px;
 }
 .username {
     margin-bottom: 10px;
 }
-.signout button {
-    display: inline-block;
-    border-style: none;
-    border-radius: 8px;
-    border-color: rgba(0, 0, 0, 0);
-    background-color: rgba(82,185,213,0);
-    font-size: large;
-    margin-top: 30px;
+.signout a {
+    text-decoration: none;
+    color: black;
     opacity: 50%;
+    position: relative;
+    top: 468px;
+    left: 1735px;
     transition: opacity .3s;
 }
-.signout button:hover {
+.signout a:hover {
     opacity: 1;
 }
