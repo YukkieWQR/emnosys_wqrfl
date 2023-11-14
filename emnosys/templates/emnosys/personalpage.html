@@ -13,12 +13,13 @@
             <img src="https://dummyimage.com/250x250/" alt="" class="username--photo">
         </div>
         <div class="username">
-            <label for="#username">Name</label>
-            username
+            <label for="#username">name:  </label>
+            {{ request.user.username }}
         </div>
         <div class="email">
-            <label for="#email">Email</label>
-            example@example.com
+            <label for="#email">email:  </label>
+            {{ request.user.email }}
+
         </div>
         <div class="signout">
             <button type="submit" class="signout">Sign Out</button>
