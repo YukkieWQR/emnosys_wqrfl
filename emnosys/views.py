@@ -8,6 +8,8 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
+from .models import Contact
+
 
 ####################################################
 
@@ -68,3 +70,14 @@ class PersonalPage(TemplateView):
         context = super().get_context_data(**kwargs)
         context['css_file'] = 'styles.css'
         return context
+
+####################################################
+
+
+def add_contact(request):
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        message = request.POST.get('message')
+        nickname = request.POST.get('nickname')
+        Contact.objects.create(name=name, message=message, nickname=nickname)
+    return render(request, 'add_contact.html')
