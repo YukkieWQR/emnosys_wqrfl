@@ -13,6 +13,7 @@
             Add contact
         </div>
         <form action="" method="post">
+        {% csrf_token %}
             <div class="username">
                 <textarea name="about--username" id="about--username" cols="30" rows="10" placeholder=" " maxlength="40"></textarea>
                 <label for="#about--username" id="username--label">Username (locally)</label>
