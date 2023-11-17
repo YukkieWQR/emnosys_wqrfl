@@ -5,7 +5,7 @@ from django.core.validators import RegexValidator
 class Contact(models.Model):
     name = models.CharField(max_length=255)
 
-    message = models.TextField()
+    message = models.TextField(max_length=999)
 
     nickname = models.CharField(
         max_length=30,

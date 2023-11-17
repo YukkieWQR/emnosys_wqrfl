@@ -80,4 +80,4 @@ def add_contact(request):
         message = request.POST.get('message')
         nickname = request.POST.get('nickname')
         Contact.objects.create(name=name, message=message, nickname=nickname)
-    return render(request, 'add_contact.html')
+    return render(request, 'emnosys/addcontacts.html')
