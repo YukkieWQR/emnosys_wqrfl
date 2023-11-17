@@ -54,6 +54,11 @@ body {
 .username {
     margin-bottom: 10px;
 }
+.waves {
+    z-index: -1;
+    position: absolute;
+    bottom: 1px;
+}
 .signout a {
     text-decoration: none;
     color: black;
