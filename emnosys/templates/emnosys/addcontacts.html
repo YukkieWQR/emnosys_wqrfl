@@ -15,7 +15,7 @@
         <form action="" method="post">
         {% csrf_token %}
             <div class="username">
-                <textarea name="about--username" id="about--username" cols="30" rows="10" placeholder=" " maxlength="40"></textarea>
+                <input name="about--username" id="about--username" placeholder=" " maxlength="40"></input>
                 <label for="#about--username" id="username--label">Username (locally)</label>
             </div>
             <div class="textarea">
@@ -23,7 +23,7 @@
                 <label for="#about--textarea" id="textarea--label">Message</label>
             </div>
             <div class="telegram" id="telegram--label">
-                <textarea name="about--telegram" id="about--telegram" cols="30" rows="10" placeholder=" " maxlength="40"></textarea>
+                <input name="about--telegram" id="about--telegram" placeholder=" " maxlength="40"></input>
                 <label for="#about--telegram" id="telegram--label">Nickname in telegram (@nickname)</label>
             </div>
             <button type="submit">Submit</button>
