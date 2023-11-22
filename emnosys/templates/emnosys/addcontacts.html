@@ -16,15 +16,15 @@
         {% csrf_token %}
             <div class="username">
                 <input name="about--username" id="about--username" placeholder=" " maxlength="40"></input>
-                <label for="#about--username" id="username--label">Username (locally)</label>
+                <label for="#about--username" id="username--label">Username for recipient (locally)</label>
             </div>
             <div class="textarea">
                 <textarea name="about--textarea" id="about--textarea" cols="30" rows="10" placeholder=" " maxlength="999"></textarea>
                 <label for="#about--textarea" id="textarea--label">Message</label>
             </div>
             <div class="telegram" id="telegram--label">
-                <input name="about--telegram" id="about--telegram" placeholder=" " maxlength="40"></input>
-                <label for="#about--telegram" id="telegram--label">Nickname in telegram (@nickname)</label>
+                <input name="about--email" id="about--email" placeholder=" " maxlength="40"></input>
+                <label for="#about--email" id="email--label">Email of recipient (for example "qwerty@gmail.com")</label>
             </div>
             <button type="submit">Submit</button>
         </form>

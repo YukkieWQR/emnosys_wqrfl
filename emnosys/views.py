@@ -30,7 +30,6 @@ def Registration(request):
         username = request.POST['username']
         email = request.POST['email']
         password1 = request.POST['password1']
-        password2 = request.POST['password2']
 
         myuser = User.objects.create_user(username, email, password1)
         myuser.save()
@@ -76,8 +75,8 @@ class PersonalPage(TemplateView):
 
 def add_contact(request):
     if request.method == 'POST':
-        name = request.POST.get('name')
-        message = request.POST.get('message')
-        nickname = request.POST.get('nickname')
-        Contact.objects.create(name=name, message=message, nickname=nickname)
+        username = request.POST.get('about--username')
+        message = request.POST.get('about--message')
+        email = request.POST.get('about--email')
+        Contact.objects.create(username=username, message=message, email=email)
     return render(request, 'emnosys/addcontacts.html')

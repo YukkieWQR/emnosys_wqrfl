@@ -3,11 +3,6 @@ from django.core.validators import RegexValidator
 
 
 class Contact(models.Model):
-    name = models.CharField(max_length=255)
-
-    message = models.TextField(max_length=999)
-
-    nickname = models.CharField(
-        max_length=30,
-        validators=[RegexValidator(r'^@.+$', 'Nickname must start with "@"')],
-    )
+    username = models.CharField(max_length=255, null=False)
+    message = models.TextField(max_length=999, null=False)
+    email = models.EmailField(max_length=99, null=False)
