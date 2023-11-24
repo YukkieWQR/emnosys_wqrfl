@@ -4,11 +4,15 @@ from django.contrib.messages.views import SuccessMessageMixin
 from django.views.generic.edit import CreateView
 from django.urls import reverse_lazy
 from django.http import HttpResponse
+from django.http import HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from .models import Contact
+from django.urls import reverse
+from django.core.validators import validate_email
+from django.core.exceptions import ValidationError
 
 
 ####################################################
@@ -76,7 +80,14 @@ class PersonalPage(TemplateView):
 def add_contact(request):
     if request.method == 'POST':
         username = request.POST.get('about--username')
-        message = request.POST.get('about--message')
+        message = request.POST.get('about--textarea')
         email = request.POST.get('about--email')
+        if not all([username, message, email]):
+            return render(request, 'emnosys/addcontacts.html')
+        try:
+            validate_email(email)
+        except ValidationError:
+            return render(request, 'emnosys/addcontacts.html')
         Contact.objects.create(username=username, message=message, email=email)
+        return HttpResponseRedirect(reverse('personalpage'))
     return render(request, 'emnosys/addcontacts.html')
