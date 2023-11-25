@@ -13,6 +13,9 @@ from .models import Contact
 from django.urls import reverse
 from django.core.validators import validate_email
 from django.core.exceptions import ValidationError
+from django.core.mail import send_mail
+
+
 
 
 ####################################################
@@ -91,3 +94,13 @@ def add_contact(request):
         Contact.objects.create(username=username, message=message, email=email)
         return HttpResponseRedirect(reverse('personalpage'))
     return render(request, 'emnosys/addcontacts.html')
+
+###################################################
+
+def send_email():
+    subject = 'Hello from emnosys'
+    message = 'Here is the message!'
+    email_from = 'pawwne27@gmail.com'
+    recipient_list = ['yukkiewqr@gmail.com']
+    send_mail(subject, message, email_from, recipient_list, fail_silently=False)
+
