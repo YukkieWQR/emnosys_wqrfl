@@ -55,19 +55,95 @@ body {
     margin-bottom: 10px;
 }
 .waves {
-    z-index: -1;
+    background: url(../images/waves.png)no-repeat;
+    display: block;
+    background-size: auto;
     position: absolute;
-    bottom: 1px;
+    z-index: -1;
+    float: left;
+    left: 0;
+    background-size: 100% 800px;
+    width: 100%;
+    top: 280px;
+    min-width: 1000px;
+    min-height: 800px;
+    overflow-y: hidden;
 }
 .signout a {
     text-decoration: none;
     color: black;
     opacity: 50%;
-    position: relative;
-    top: 468px;
-    left: 1735px;
+    position: absolute;
+    top: 45vw;
+    left: 93vw;
     transition: opacity .3s;
 }
 .signout a:hover {
     opacity: 1;
+}
+@media (min-width: 1366px), (min-height: 768px) {
+    .waves {
+        height: 600px;
+    }
+    .signout a {
+        position: absolute;
+        top: 48vw;
+        left: 91vw;
+    }
+}
+@media (min-width: 1920px), (min-height: 1080px) {
+    .waves {
+        height: 800px;
+    }
+    .signout a {
+        position: absolute;
+        top: 46vw;
+        left: 93vw;
+    }
+}
+@media (min-width: 2048px), (min-height: 1080px) {
+    .waves {
+        top: 500px;
+    }
+    .signout a {
+        position: absolute;
+        top: 46vw;
+        left: 93vw;
+        font-size: x-large;
+    }
+    .main {
+        font-size: x-large;
+    }
+    .username--photo {
+        height: 300px;
+    }
+    .head a{
+        border-width: 10px;
+        border-style: solid;
+        width: 175px;
+        font-size: x-large;
+    }
+}
+@media (min-width: 4096px), (min-height: 2160px) {
+    .waves {
+        top: 1400px;
+    }
+    .signout a {
+        position: absolute;
+        top: 43vw;
+        left: 95vw;
+        font-size: xx-large;
+    }
+    .main {
+        font-size: xx-large;
+    }
+    .username--photo {
+        height: 400px;
+    }
+    .head a{
+        border-width: 20px;
+        border-style: solid;
+        width: 250px;
+        font-size: xx-large;
+    }
 }

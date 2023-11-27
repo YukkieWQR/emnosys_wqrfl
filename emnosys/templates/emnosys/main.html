@@ -6,8 +6,10 @@
     <link rel="stylesheet" href="../../static/emnosys/css/styles-main.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
+    {% csrf_token %}
     <div class="head">
         
         {% if user.is_authenticated %}
@@ -26,9 +28,22 @@
 
         </div>
     <div class="main">
-        <button type="submit" id="main--button"></button>
+        <button type="button" id="main--button"></button>
         <p id="main--label">BUTTON</p>
     </div>
+    <script>
+        $('#main--button').click(function() {
+            $.ajax({
+                url: '/send_email/',
+                success: function(data) {
+                    alert('Email sent!');
+                },
+                error: function(error) {
+                    alert('pizdec' + error)
+                }
+            });
+        });
+    </script>
     <div class="waves">
     </div>
     <div class="foot">

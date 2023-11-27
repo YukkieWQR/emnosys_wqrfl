@@ -14,6 +14,7 @@ from django.urls import reverse
 from django.core.validators import validate_email
 from django.core.exceptions import ValidationError
 from django.core.mail import send_mail
+from django.http import JsonResponse
 
 
 
@@ -97,10 +98,10 @@ def add_contact(request):
 
 ###################################################
 
-def send_email():
+def send_email(request):
     subject = 'Hello from emnosys'
     message = 'Here is the message!'
     email_from = 'pawwne27@gmail.com'
     recipient_list = ['yukkiewqr@gmail.com']
     send_mail(subject, message, email_from, recipient_list, fail_silently=False)
-
+    return JsonResponse({'success': True})

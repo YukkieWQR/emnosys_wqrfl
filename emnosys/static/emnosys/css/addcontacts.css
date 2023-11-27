@@ -80,7 +80,7 @@ button:hover {
     font-size: large;
     
 }
-#about--telegram {
+#about--email {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -112,7 +112,7 @@ label {
     top: -230px;
 }
 #about--username:placeholder-shown ~ #username--label,
-#about--telegram:placeholder-shown ~ #telegram--label {
+#about--email:placeholder-shown ~ #email--label {
     top: -40px;
     opacity: 0.5;
 }
@@ -121,7 +121,82 @@ label {
     opacity: 0.5;
 }
 .waves {
-    position: relative;
-    top: 80px;
+    background: url(../images/waves.png)no-repeat;
+    display: block;
+    background-size: auto;
+    position: absolute;
     z-index: -1;
+    float: left;
+    left: 0;
+    background-size: 100% 800px;
+    width: 100%;
+    top: 280px;
+    min-width: 1000px;
+    min-height: 800px;
+    overflow-y: hidden;
+}
+@media (min-width: 1366px), (min-height: 768px) {
+    .waves {
+        height: 600px;
+    }
+}
+@media (min-width: 1920px), (min-height: 1080px) {
+    .waves {
+        height: 800px;
+    }
+}
+@media (min-width: 2048px), (min-height: 1080px) {
+    .waves {
+        top: 500px;
+    }
+}
+@media (min-width: 4096px), (min-height: 2160px) {
+    * {
+        font-size: xx-large;
+    }
+    .waves {
+        top: 1400px;
+    }
+    .about {
+        width: 1200px;
+        height: 1200px;
+    }
+    button {
+        width: 300px;
+        height: 100px;
+        font-size: xx-large;
+    }
+    #about--username {
+        margin: 30px auto;
+        width: 900px;
+        height: 40px;
+        font-size: xx-large;
+    }
+    #about--textarea {
+        margin: 30px 0 0 0;
+        width: 900px;
+        height: 380px;
+        font-size: xx-large;
+    }
+    #about--email {
+        margin: 0 0 30px 0;
+        width: 900px;
+        height: 40px;
+        font-size: xx-large;
+    }
+    label {
+        top: -110px;
+    }
+    #textarea--label {
+        top: -430px;
+    }
+    #about--username:placeholder-shown ~ #username--label,
+    #about--email:placeholder-shown ~ #email--label {
+        top: -80px;
+        opacity: 0.5;
+    }
+    #about--textarea:placeholder-shown ~ #textarea--label {
+        top: -400px;
+        opacity: 0.5;
+    }
 }

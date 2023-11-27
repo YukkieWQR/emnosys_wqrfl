@@ -115,3 +115,87 @@ input {
     background-color: white;
     box-shadow: 0 0 15px 1px white;
 }
+.waves {
+    background: url(../images/waves.png)no-repeat;
+    display: block;
+    background-size: auto;
+    position: absolute;
+    z-index: -1;
+    float: left;
+    left: 0;
+    background-size: 100% 800px;
+    width: 100%;
+    top: 280px;
+    min-width: 1000px;
+    min-height: 800px;
+    overflow-y: hidden;
+}
+@media (min-width: 1366px), (min-height: 768px) {
+    .waves {
+        height: 600px;
+    }
+}
+@media (min-width: 1920px), (min-height: 1080px) {
+    .waves {
+        height: 800px;
+    }
+}
+@media (min-width: 2048px), (min-height: 1080px) {
+    .waves {
+        top: 500px;
+    }
+}
+@media (min-width: 4096px), (min-height: 2160px) {
+    * {
+        font-size: xx-large;
+    }
+    #label1,
+    #label2 {
+        font-size: xx-large;
+    }
+    .waves {
+        top: 1400px;
+    }
+    .login {
+        width: 700px;
+        height: 700px;
+    }
+    #login {
+        margin-top: 30px;
+        width: 460px;
+        outline: none;
+        padding-bottom: 5px;
+        font-size: xx-large;
+    }
+    #password {
+        margin-top: 20px;
+        margin-bottom: 80px;
+        width: 460px;
+        outline: none;
+        font-size: xx-large;
+    }
+    #submit--button {
+        width: 600px;
+        height: 100px;
+        font-size: xx-large;
+    }
+    h3 {
+        font-size: xx-large;
+        position: relative;
+        bottom: 20px;
+    }
+    #label1 {
+        top: -80px;
+    }
+    #label2 {
+        top: -160px;
+    }
+    #login:placeholder-shown ~ #label1 {
+        top: -45px;
+        opacity: 0.5;
+    }
+    #password:placeholder-shown ~ #label2 {
+        top: -125px;
+        opacity: 0.5;
+    }
+}

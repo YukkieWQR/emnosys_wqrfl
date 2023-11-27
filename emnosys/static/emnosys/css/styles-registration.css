@@ -100,13 +100,6 @@ input {
     display: flex;
     flex-direction: column;
 }
-@media (min-width: 1920px), (min-height: 1080px) {
-    .waves {
-        position: relative;
-        top: 100px;
-        z-index: -1;
-    }
-}
 button {
     width: 300px;
     height: 50px;
@@ -119,4 +112,82 @@ button {
 button:hover {
     background-color: white;
     box-shadow: 0 0 15px 1px white;
+}
+.waves {
+    background: url(../images/waves.png)no-repeat;
+    display: block;
+    background-size: auto;
+    position: absolute;
+    z-index: -1;
+    float: left;
+    left: 0;
+    background-size: 100% 800px;
+    width: 100%;
+    top: 280px;
+    min-width: 1000px;
+    min-height: 800px;
+    overflow-y: hidden;
+}
+@media (min-width: 1366px), (min-height: 768px) {
+    .waves {
+        height: 600px;
+    }
+}
+@media (min-width: 1920px), (min-height: 1080px) {
+    .waves {
+        height: 800px;
+    }
+}
+@media (min-width: 2048px), (min-height: 1080px) {
+    .waves {
+        top: 500px;
+    }
+}
+@media (min-width: 4096px), (min-height: 2160px) {
+    * {
+        font-size: xx-large;
+    }
+    .waves {
+        top: 1400px;
+    }
+    .login {
+        width: 800px;
+        height: 800px;
+    }
+    input {
+        font-size: xx-large;
+        width: 500px;
+        margin: 0 0 30px 0;
+    }
+    button  { 
+        font-size: xx-large;
+        width: 600px;
+        height: 100px;
+    }
+    #username--label {
+        top: -113px;
+    }
+    #email--label {
+        top: -113px;
+    }
+    #password1--label {
+        top: -113px;
+    }
+    #password2--label {
+        top: -143px;
+    }
+    #password2 {
+        margin-bottom: 60px;
+    }
+    #username {
+        margin-top: 10px;
+    }
+    #username:placeholder-shown ~ #username--label,
+    #email:placeholder-shown ~ #email--label,
+    #password1:placeholder-shown ~ #password1--label {
+        top: -75px;
+    }
+    #password2:placeholder-shown ~ #password2--label {
+        top: -105px;
+    }
 }

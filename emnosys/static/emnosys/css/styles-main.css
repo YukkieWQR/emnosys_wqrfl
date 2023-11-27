@@ -118,26 +118,6 @@ body {
     min-width: 1000px;
     overflow-y: hidden;
 }
-@media (min-width: 1366px), (min-height: 768px) {
-    .waves {
-        height: 600px;
-    }
-}
-@media (min-width: 1920px), (min-height: 1080px) {
-    .waves {
-        height: 800px;
-    }
-}
-@media (min-width: 2048px), (min-height: 1080px) {
-    .waves {
-        top: 500px;
-    }
-}
-@media (min-width: 4096px), (min-height: 2160px) {
-    .waves {
-        top: 1000px;
-    }
-}
 .foot {
     display: flex;
     height: 150px;
@@ -175,4 +155,55 @@ body {
     align-items: inherit;
     width: 200px;
     margin: auto;
+}
+@media (min-width: 1366px), (min-height: 768px) {
+    .waves {
+        height: 600px;
+    }
+}
+@media (min-width: 1920px), (min-height: 1080px) {
+    .waves {
+        height: 800px;
+    }
+}
+@media (min-width: 2048px), (min-height: 1080px) {
+    .waves {
+        top: 500px;
+    }
+    .user--auth {
+        font-size: x-large;
+    }
+    #main-button {
+        width: 300px;
+        height: 300px;
+    }
+}
+@media (min-width: 4096px), (min-height: 2160px) {
+    .waves {
+        top: 1000px;
+    }
+    .user--auth {
+        font-size: xx-large;
+        border-width: 10px;
+        border-style: solid;
+        border-color: rgba(0, 0, 0, 0);
+    }
+    #main--button {
+        width: 400px;
+        height: 400px;
+    }
+    #main--label {
+        font-size: xx-large;
+    }
+    .user {
+        font-size: xx-large;
+        padding: 14px 20px 10px 20px;
+    }
+    #user--icon {
+        width: 100px;
+    }
+    .foot {
+        font-size: x-large;
+        height: 200px;
+    }
 }
