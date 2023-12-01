@@ -43,7 +43,6 @@ body {
     border-color: rgba(82,185,213,0.7);
     box-shadow: 0 0 20px 1px rgba(82,185,213,0.7);
     border-radius: 8px;
-    height: 40vw;
     font-size: larger;
 }
 .username--photo {
@@ -73,9 +72,9 @@ body {
     text-decoration: none;
     color: black;
     opacity: 50%;
-    position: absolute;
-    top: 45vw;
-    left: 93vw;
+    display: flex;
+    align-items: end;
+    justify-content: right;
     transition: opacity .3s;
 }
 .signout a:hover {
@@ -85,32 +84,18 @@ body {
     .waves {
         height: 600px;
     }
-    .signout a {
-        position: absolute;
-        top: 48vw;
-        left: 91vw;
-    }
+    
 }
 @media (min-width: 1920px), (min-height: 1080px) {
     .waves {
         height: 800px;
-    }
-    .signout a {
-        position: absolute;
-        top: 46vw;
-        left: 93vw;
     }
 }
 @media (min-width: 2048px), (min-height: 1080px) {
     .waves {
         top: 500px;
     }
-    .signout a {
-        position: absolute;
-        top: 46vw;
-        left: 93vw;
-        font-size: x-large;
-    }
+    
     .main {
         font-size: x-large;
     }
@@ -128,12 +113,7 @@ body {
     .waves {
         top: 1400px;
     }
-    .signout a {
-        position: absolute;
-        top: 43vw;
-        left: 95vw;
-        font-size: xx-large;
-    }
+    
     .main {
         font-size: xx-large;
     }
