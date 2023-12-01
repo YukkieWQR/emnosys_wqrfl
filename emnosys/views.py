@@ -15,13 +15,13 @@ from django.core.validators import validate_email
 from django.core.exceptions import ValidationError
 from django.core.mail import send_mail
 from django.http import JsonResponse
-
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 
 ####################################################
 
-class Main(TemplateView):
+class MainView(TemplateView):
     template_name = 'emnosys/main.html'
 
     def get_context_data(self, **kwargs):
@@ -33,7 +33,7 @@ class Main(TemplateView):
 
 
 
-def Registration(request):
+def RegistrationView(request):
     if request.method == "POST":
         username = request.POST['username']
         email = request.POST['email']
@@ -47,7 +47,7 @@ def Registration(request):
 
 ###############################################
 
-def Signin(request):
+def SigninView(request):
 
     if request.method == 'POST':
         username = request.POST['username']
@@ -64,13 +64,13 @@ def Signin(request):
 
 ################################################
 
-def Signout(request):
+def SignoutView(request):
     logout(request)
     return redirect('home')
 
 ######################################################
 
-class PersonalPage(TemplateView):
+class PersonalPageView(TemplateView):
     template_name = 'emnosys/personalpage.html'
 
     def get_context_data(self, **kwargs):
@@ -80,8 +80,8 @@ class PersonalPage(TemplateView):
 
 ####################################################
 
-
-def add_contact(request):
+@login_required
+def ContactCreateView(request):
     if request.method == 'POST':
         username = request.POST.get('about--username')
         message = request.POST.get('about--textarea')
@@ -92,13 +92,15 @@ def add_contact(request):
             validate_email(email)
         except ValidationError:
             return render(request, 'emnosys/addcontacts.html')
-        Contact.objects.create(username=username, message=message, email=email)
+        contact = Contact(username=username, message=message, email=email, contactowner=request.user)
+        contact.save()
         return HttpResponseRedirect(reverse('personalpage'))
     return render(request, 'emnosys/addcontacts.html')
 
 ###################################################
 
-def send_email(request):
+# this function is shit
+def SendEmailView(request):
     subject = 'Hello from emnosys'
     message = 'Here is the message!'
     email_from = 'pawwne27@gmail.com'
