@@ -97,13 +97,6 @@ def ContactCreateView(request):
         return HttpResponseRedirect(reverse('personalpage'))
     return render(request, 'emnosys/addcontacts.html')
 
-###################################################
 
-# this function is shit
-def SendEmailView(request):
-    subject = 'Hello from emnosys'
-    message = 'Here is the message!'
-    email_from = 'pawwne27@gmail.com'
-    recipient_list = ['yukkiewqr@gmail.com']
-    send_mail(subject, message, email_from, recipient_list, fail_silently=False)
-    return JsonResponse({'success': True})
+
+
