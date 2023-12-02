@@ -1,3 +1,4 @@
+from django.conf import settings
 from emnosys.models import Contact
 from django.core.mail import send_mail
 
