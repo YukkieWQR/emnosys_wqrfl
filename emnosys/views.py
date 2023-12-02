@@ -16,7 +16,7 @@ from django.core.exceptions import ValidationError
 from django.core.mail import send_mail
 from django.http import JsonResponse
 from django.contrib.auth.mixins import LoginRequiredMixin
-
+from .utils import SendEmail
 
 
 ####################################################
@@ -98,5 +98,9 @@ def ContactCreateView(request):
     return render(request, 'emnosys/addcontacts.html')
 
 
+##################################
 
 
+def SendEmailView(request):
+    SendEmail()
+    return redirect('/')

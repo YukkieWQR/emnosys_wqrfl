@@ -10,7 +10,6 @@ urlpatterns = [
     path('signout/', views.SignoutView, name='signout'),
     path('personalpage/', PersonalPageView.as_view(), name='personalpage'),
     path('addcontact/', views.ContactCreateView, name='addcontact'),
-    path('send_email/', views.SendEmailView, name='send_email')
 ]
 
 
