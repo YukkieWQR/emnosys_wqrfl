@@ -102,5 +102,5 @@ def ContactCreateView(request):
 
 
 def SendEmailView(request):
-    SendEmail()
+    SendEmail(request)
     return redirect('/')

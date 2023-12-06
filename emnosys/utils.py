@@ -1,14 +1,21 @@
 from django.conf import settings
 from emnosys.models import Contact
-from django.core.mail import send_mass_mail, EmailMessage
-def SendEmail():
-    message1 = EmailMessage(
-        "Subject here",
-        "Here is the message",
-        "emnosys.wqrfl@gmail.com",
-        ["pawwne27@gmail.com"],
-    )
+from django.core.mail import send_mail, EmailMessage
+from .models import Contact
+from django.shortcuts import render
+from django.template.loader import render_to_string
 
-    message_tuple = ((message1.subject, message1.body, message1.from_email, message1.to),)
+def SendEmail(request):
+    username = request.user.username
+    all_contacts = Contact.objects.filter(contactowner__username=username)
 
-    send_mass_mail(message_tuple, fail_silently=False)
+    for cntct in all_contacts:
+        personalized_message = f'Hello {cntct.username}, your message is: {cntct.message}'
+        email = EmailMessage(
+            'Someone used our application to send you this emergency message!',
+            personalized_message,
+            'emnosy.wqrfl@gmail.com',
+            [cntct.email],
+        )
+        email.content_subtype = 'html'  # Set the content type to HTML
+        email.send(fail_silently=False)
