@@ -10,7 +10,7 @@ def SendEmail(request):
     all_contacts = Contact.objects.filter(contactowner__username=username)
 
     for cntct in all_contacts:
-        personalized_message = f'Hello {cntct.username}, your message is: {cntct.message}'
+        personalized_message = cntct.message
         email = EmailMessage(
             'Someone used our application to send you this emergency message!',
             personalized_message,
