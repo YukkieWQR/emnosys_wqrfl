@@ -104,10 +104,17 @@ def ContactCreateView(request):
 ##################################
 
 
-def SendEmailView(request):
+def CreateListOfContacts(request):
     username = request.user.username
     all_contacts = Contact.objects.filter(contactowner__username=username)
+    return all_contacts
 
+
+##################################
+
+
+def SendEmailView(request):
+    CreateListOfContacts()
     for cntct in all_contacts:
         personalized_message = cntct.message
         email = EmailMessage(
@@ -120,3 +127,12 @@ def SendEmailView(request):
         email.send(fail_silently=False)
 
     return redirect('/')
+
+
+##################################
+
+
+def CreateListOfContactNames(request):
+    CreateListOfContacts()
+    all_contacts_names = all_contacts.username
+    return all_contacts_names
