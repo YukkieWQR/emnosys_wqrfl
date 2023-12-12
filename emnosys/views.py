@@ -114,7 +114,7 @@ def CreateListOfContacts(request):
 
 
 def SendEmailView(request):
-    CreateListOfContacts()
+    all_contacts = CreateListOfContacts(request)
     for cntct in all_contacts:
         personalized_message = cntct.message
         email = EmailMessage(
