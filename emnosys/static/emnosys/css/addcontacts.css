@@ -67,7 +67,7 @@ button:hover {
     display: flex;
     width: 400px;
     height: 180px;
-    margin: 15px 0 0 0;
+    margin: 20px 0 0 0;
     border-color: rgba(0, 0, 0, 0);
     border-bottom-color: white;
     border-left-color: white;
@@ -87,7 +87,7 @@ button:hover {
     resize: none;
     width: 400px;
     height: 20px;
-    margin: 0 0 15px 0;
+    margin: 20px 0 0 0;
     border-color: rgba(0, 0, 0, 0);
     border-bottom-color: white;
     border-style: solid;
@@ -105,20 +105,56 @@ label {
     opacity: 1;
     transition: opacity .3s, top .3s;
 }
+#email--label {
+    top: -55px;
+}
 #textarea--label {
     display: flex;
     z-index: -1;
     left: 10px;
     top: -230px;
 }
-#about--username:placeholder-shown ~ #username--label,
-#about--email:placeholder-shown ~ #email--label {
+#about--username:placeholder-shown ~ #username--label {
     top: -40px;
     opacity: 0.5;
 }
-#about--textarea:placeholder-shown ~ #textarea--label {
-    top: -200px;
+#about--email:placeholder-shown ~ #email--label {
+    top: -25px;
     opacity: 0.5;
+}
+#about--textarea:placeholder-shown ~ #textarea--label {
+    top: -190px;
+    opacity: 0.5;
+}
+#about--username-error {
+    z-index: -2;
+    color: red;
+    pointer-events: none;
+    position: fixed;
+    top: 155px;
+    left: 15%;
+
+}
+#about--textarea-error {
+    z-index: -2;
+    color: red;
+    pointer-events: none;
+    position: fixed;
+    top: 410px;
+    left: 15%;
+
+}
+#about--email-error {
+    z-index: -2;
+    color: red;
+    pointer-events: none;
+    position: fixed;
+    top: 490px;
+    left: 15%;
+}
+.disabled {
+    color: darkgray;
+    pointer-events: none;
 }
 .waves {
     background: url(../images/waves.png)no-repeat;

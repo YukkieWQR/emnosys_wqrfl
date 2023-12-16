@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0" >
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <title>Document</title>
     <link rel="stylesheet" href="../../static/emnosys/css/styles-personalpage.css">
 </head>
@@ -29,5 +30,12 @@
     </div>
     <div class="waves">
     </div>
+    <script>
+        $('.signout').click(function() {
+            $.ajax({
+                url: '/signout/',
+            });
+        });
+    </script>
 </body>
 </html>

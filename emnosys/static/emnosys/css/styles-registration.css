@@ -40,7 +40,8 @@ input {
     border-color: rgba(0, 0, 0, 0);
     border-bottom: 2px solid white;
     outline: none;
-    padding: 0 0 5px 0;
+    padding: 0 0 0 0;
+    margin: 0 0 20px 0;
     font-size: medium;
     width: 250px;
 }
@@ -48,7 +49,7 @@ input {
     z-index: -1;
     pointer-events: none;
     position: relative;
-    top: -43px;
+    top: -55px;
     color: black;
     transition: opacity .3s, top .3s;
     animation: filled;
@@ -57,7 +58,7 @@ input {
     z-index: -1;
     pointer-events: none;
     position: relative;
-    top: -43px;
+    top: -55px;
     color: black;
     transition: opacity .3s, top .3s;
     animation: filled;
@@ -66,7 +67,7 @@ input {
     z-index: -1;
     pointer-events: none;
     position: relative;
-    top: -43px;
+    top: -55px;
     color: black;
     transition: opacity .3s, top .3s;
     animation: filled;
@@ -75,7 +76,7 @@ input {
     z-index: -1;
     pointer-events: none;
     position: relative;
-    top: -73px;
+    top: -65px;
     color: black;
     transition: opacity .3s, top .3s;
     animation: filled;
@@ -84,7 +85,7 @@ input {
 #email:placeholder-shown ~ #email--label,
 #password1:placeholder-shown ~ #password1--label{
     opacity: 0.5;
-    top: -25px;
+    top: -42px;
 }
 #password2:placeholder-shown ~  #password2--label {
     opacity: 0.5;
@@ -99,6 +100,34 @@ input {
 .password2 {
     display: flex;
     flex-direction: column;
+}
+#username-error {
+    z-index: -2;
+    color: red;
+    pointer-events: none;
+    position: absolute;
+    bottom: 280px;
+}
+#email-error {
+    z-index: -2;
+    color: red;
+    pointer-events: none;
+    position: absolute;
+    bottom: 220px;
+}
+#password1-error {
+    z-index: -2;
+    color: red;
+    pointer-events: none;
+    position: absolute;
+    bottom: 160px;
+}
+#password2-error {
+    z-index: -2;
+    color: red;
+    pointer-events: none;
+    position: absolute;
+    bottom: 100px;
 }
 button {
     width: 300px;

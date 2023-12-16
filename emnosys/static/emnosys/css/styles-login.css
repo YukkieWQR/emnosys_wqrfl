@@ -102,6 +102,20 @@ input {
     top: -20px;
     opacity: 0.5;
 }
+#login-error {
+    z-index: -2;
+    color: red;
+    pointer-events: none;
+    position: absolute;
+    bottom: 190px;
+}
+#password-error {
+    z-index: -2;
+    color: red;
+    pointer-events: none;
+    position: absolute;
+    bottom: 120px;
+}
 #submit--button {
     width: 300px;
     height: 50px;
