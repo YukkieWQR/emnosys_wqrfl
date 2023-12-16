@@ -44,27 +44,15 @@ def RegistrationView(request):
         email = request.POST['email']
         password1 = request.POST['password1']
 
-        try:
-            if User.objects.filter(username=username).first():
-                return redirect('/register')
+        myuser = User.objects.create_user(username, email, password1)
+        myuser.save()
 
-            elif User.objects.filter(email=email).first():
-                return redirect('/register')
+        profile_obj = Profile.objects.create(user=myuser, token=str(uuid.uuid4))
+        profile_obj.save()
 
-            myuser = User.objects.create_user(username, email, password1)
-            myuser.save()
+        return redirect('/token')
 
-            profile_obj = Profile.objects.create(user=user_obj, token=str(uuid.uuid4))
-            profile_obj.save()
-
-            return redirect('/token')
-
-        except Exception as e:
-            print(e)
-
-        return render(request, 'emnosys/registration.html')
-
-
+    return render(request, 'emnosys/registration.html', {'request': request})
 ###############################################
 
 
