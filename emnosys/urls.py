@@ -12,7 +12,7 @@ urlpatterns = [
     path('addcontact/', views.ContactCreateView, name='addcontact'),
     path('send_email/', views.SendEmailView, name='sendemail'),
     path('verify/<auth_token>', views.VerificationView, name="verify"),
-
+    path('contact_list/', views.CreateJsonWithNamesView, name='contact_list')
 ]
 
 
