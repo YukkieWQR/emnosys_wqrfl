@@ -21,7 +21,7 @@ from django.core.mail import send_mail, EmailMessage
 from django.shortcuts import render
 from django.template.loader import render_to_string
 import json
-
+import uuid
 
 ####################################################
 
@@ -53,6 +53,8 @@ def RegistrationView(request):
         return redirect('/token')
 
     return render(request, 'emnosys/registration.html', {'request': request})
+
+
 ###############################################
 
 
