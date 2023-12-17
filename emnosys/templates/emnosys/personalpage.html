@@ -24,6 +24,20 @@
             <label for="#email">email:  </label>
             {{ request.user.email }}
         </div>
+        <script>
+            $.ajax({
+                url: '/contact_list/',
+                type: 'GET',
+                dataType: 'json',
+                success: function (json_data) {
+                    const jsonData = JSON.parse(json_data)
+                    console.log(jsonData)
+                },
+                error: function () {
+                    console.log('error')
+                }
+            })
+        </script>
         <div class="signout">
             <a href="https://">Sign Out</a>
         </div>
