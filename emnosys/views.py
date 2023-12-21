@@ -35,7 +35,7 @@ class MainView(TemplateView):
         return context
 
 
-###################################################
+######################################################
 
 
 def RegistrationView(request):
@@ -50,6 +50,8 @@ def RegistrationView(request):
         profile_obj = Profile.objects.create(user=myuser, token=str(uuid.uuid4))
         profile_obj.save()
 
+        SendVerificationEmailView(email, profile_obj.token)
+
         return redirect('/token')
 
     return render(request, 'emnosys/registration.html', {'request': request})
@@ -58,18 +60,40 @@ def RegistrationView(request):
 ###############################################
 
 
-def VerificationView(request , auth_token):
+def TokenSendView (request):
+    return render(request , 'emnosys/send_token.html')
+
+
+###############################################
+
+
+def VerificationView(request, token):
     try:
-        profile_obj = Profile.objects.filter(auth_token = auth_token).first()
+        profile_obj = Profile.objects.filter(token=token).first()
         if profile_obj:
             profile_obj.is_verified = True
             profile_obj.save()
-            messages.success(request, 'You account is been verified')
-            return redirect('/login')
+            messages.success(request, 'Your account has been verified')
+            return redirect('/signin')
         else:
+
+            messages.error(request, 'Invalid token or profile not found')
             return redirect('/error')
     except Exception as e:
+
         print(e)
+        return redirect('/error')
+
+
+###################################################
+
+
+def SendVerificationEmailView(email,token):
+    subject = "Your account needs to be verified"
+    message = 'Hi, use that link to verify your account \n http://127.0.0.1:8000/verify/' + token
+    email_from = settings.EMAIL_HOST_USER
+    recipient_list = [email]
+    send_mail(subject, message , email_from ,recipient_list)
 
 
 ###############################################
@@ -95,17 +119,6 @@ def SigninView(request):
 def SignoutView(request):
     logout(request)
     return redirect('home')
-
-######################################################
-
-
-def SendVerificationEmailView(email,token):
-    subject = "Your account needs to be verified"
-    message = f'Hi paste your link to verify your account http://127.0.0.1:8000/verify/{token}'
-    email_from = settings.EMAIL_HOST_USER
-    recipient_list = [email]
-    send_mail(subject, message , email_from ,recipient_list)
-
 
 ######################################################
 

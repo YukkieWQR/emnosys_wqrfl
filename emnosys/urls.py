@@ -11,7 +11,8 @@ urlpatterns = [
     path('personalpage/', PersonalPageView.as_view(), name='personalpage'),
     path('addcontact/', views.ContactCreateView, name='addcontact'),
     path('send_email/', views.SendEmailView, name='sendemail'),
-    path('verify/<auth_token>', views.VerificationView, name="verify"),
+    path('token/' , views.TokenSendView , name='token_send'),
+    path('verify/<token>', views.VerificationView, name="verify"),
     path('contact_list/', views.CreateJsonWithNamesView, name='contact_list')
 ]
 
