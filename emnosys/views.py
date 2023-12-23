@@ -1,8 +1,4 @@
-from django.shortcuts import render, redirect
-from django.views.generic import TemplateView
-from django.contrib.messages.views import SuccessMessageMixin
-from django.views.generic.edit import CreateView
-from django.urls import reverse_lazy
+from django.shortcuts import redirect
 from django.http import HttpResponse
 from django.http import HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
@@ -13,15 +9,12 @@ from .models import Contact, Profile
 from django.urls import reverse
 from django.core.validators import validate_email
 from django.core.exceptions import ValidationError
-from django.core.mail import send_mail
-from django.http import JsonResponse
-from django.contrib.auth.mixins import LoginRequiredMixin
 from django.conf import settings
 from django.core.mail import send_mail, EmailMessage
 from django.shortcuts import render
-from django.template.loader import render_to_string
 import json
 import uuid
+from django.views.generic import TemplateView
 
 ####################################################
 
@@ -182,10 +175,12 @@ def SendEmailView(request):
 ##################################
 
 
-def CreateJsonWithNamesView():
-    users = User.objects.all()
+def CreateJsonWithNamesView(request):
+    data = {}
+    users = CreateListOfContacts(request)
+    print(users)
     for i, user in enumerate(users, start=1):
-        data['user' + i] = {
+        data['user' + str(i)] = {
             'username': user.username
         }
     json_data = json.dumps(data)
@@ -217,4 +212,3 @@ def CreateJsonWithNamesView():
 # ⣿⣿⣿⣿⣿⣿⣷⠎⠄⢠⠏⠄⠹⣄⢣⢠⠃⠄⠄⢤⠤⠄⠄⠠⠤⢶⡏⠄⡎⢠⠞⠋⠁⠄⠄⠄⣸⠁⠄⠄⠄⠄⠄⠄⠈⣧⠄⠄⠄⠄⠄⠄⠄⠄⠻
 # ⣿⣿⣿⣿⣿⣿⣃⡀⢠⠏⠄⠄⠄⠄⣨⠇⠄⣠⠴⠚⠁⠄⠄⠄⠄⠈⡇⢰⠃⠄⠄⠄⠄⠄⠄⢰⠇⠄⠄⠄⠄⠄⠄⠄⠄⢹⡀
 # ⣿⣿⣿⣿⣿⡿⢉⣇⡎⠄⠄⠄⠄⢰⠇⠄⢨⠇⠄⠄⠄⠄⠄⠄⠄⠄⠘⢾⡀⠄⠄⠄⠄⠄⠄⡞⢀⠄⠄⠄⠄⠄⠄⠄⠄⢸⡇
-
