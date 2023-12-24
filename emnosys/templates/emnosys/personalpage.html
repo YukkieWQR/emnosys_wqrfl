@@ -24,18 +24,38 @@
             <label for="#email">email:  </label>
             {{ request.user.email }}
         </div>
+        <div class="contact-list">
+            <p>Contact List</p>
+        </div>
         <script>
-            $.ajax({
-                url: '/contact_list/',
-                type: 'GET',
-                dataType: 'json',
-                success: function (json_data) {
-                    const jsonData = JSON.parse(json_data)
-                    console.log(jsonData)
-                },
-                error: function () {
-                    console.log('error')
+            function makeContactList() {
+                return new Promise(function (resolve, reject) {
+                    $.ajax({
+                        url: '/contact_list/',
+                        type: 'GET',
+                        dataType: 'json',
+                        success: function (json_data) {
+                            resolve(json_data)
+                        },
+                        error: function () {
+                            reject('Error fetching data')
+                        }
+                    })
+                })
+            }
+            makeContactList().then(function (data) {
+                console.log('Data', data)
+                let divsContainer = document.querySelector('.contact-list')
+                for (let userKey in data) {
+                    if (data.hasOwnProperty(userKey)) {
+                        let contactElement = document.createElement('div')
+                        contactElement.className = 'contact'
+                        contactElement.textContent = userKey + ': ' + data[userKey].username
+                        divsContainer.appendChild(contactElement)
+                    }
                 }
+            }).catch(function (error) {
+                console.error(error)
             })
         </script>
         <div class="signout">

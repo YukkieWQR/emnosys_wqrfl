@@ -53,6 +53,21 @@ body {
 .username {
     margin-bottom: 10px;
 }
+.contact {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    border-radius: 12px;
+    border: solid rgba(83,83,83,.0);
+    background-color: rgba(83,83,83,.4);
+    box-shadow: 0 0 15px 1px rgba(83,83,83,.4);
+    color: rgba(256,256,256,.8);
+    max-width: 25%;
+
+}
 .waves {
     background: url(../images/waves.png)no-repeat;
     display: block;

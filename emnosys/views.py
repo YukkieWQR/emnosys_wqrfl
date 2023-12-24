@@ -180,7 +180,7 @@ def CreateJsonWithNamesView(request):
     users = CreateListOfContacts(request)
     print(users)
     for i, user in enumerate(users, start=1):
-        data['user' + str(i)] = {
+        data['№' + str(i)] = {
             'username': user.username
         }
     json_data = json.dumps(data)
