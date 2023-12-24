@@ -104,6 +104,11 @@ body {
     font-size: large;
     color: white;
 }
+#main--label--success {
+    color: white;
+    font-size: large;
+    opacity: 0;
+}
 #disabled--button {
     background-color:darkgray;
     justify-content: center;

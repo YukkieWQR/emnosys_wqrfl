@@ -25,7 +25,7 @@
             {{ request.user.email }}
         </div>
         <div class="contact-list">
-            <p>Contact List</p>
+            <p>Contact List:</p>
         </div>
         <script>
             function makeContactList() {
@@ -46,13 +46,21 @@
             makeContactList().then(function (data) {
                 console.log('Data', data)
                 let divsContainer = document.querySelector('.contact-list')
+                let contactsExist = false
                 for (let userKey in data) {
                     if (data.hasOwnProperty(userKey)) {
                         let contactElement = document.createElement('div')
                         contactElement.className = 'contact'
                         contactElement.textContent = userKey + ': ' + data[userKey].username
                         divsContainer.appendChild(contactElement)
+                        contactsExist = true
                     }
+                }
+                if (contactsExist === false) {
+                    let contactEmpty = document.createElement('p')
+                    contactEmpty.className = 'contact'
+                    contactEmpty.textContent = "You don't have any contacts!"
+                    divsContainer.appendChild(contactEmpty)
                 }
             }).catch(function (error) {
                 console.error(error)

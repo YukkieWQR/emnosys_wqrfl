@@ -33,6 +33,7 @@
 
         <button type="button" id="main--button" onmousedown="shrinkButton()" onmouseup="restoreButton()"></button>
         <p id="main--label">Click to send messages</p>
+        <p id="main--label--success">Email sent!</p>
 
         {% else %}
 
@@ -45,7 +46,21 @@
     <script>
         $('#main--button').click(function() {
             $.ajax({
-                url: '/send_email/'
+                url: '/send_email/',
+                success: async function () {
+                    const delay = async (ms) => await new Promise(resolve => setTimeout(resolve, ms))
+                    let $label = document.getElementById('main--label')
+                    $label.textContent = 'Email sent!'
+                    await delay(3000)
+                    $label.textContent = 'Click to send messages'
+                },
+                error: function () {
+                    const delay = async (ms) => await new Promise(resolve => setTimeout(resolve, ms))
+                    let $label = document.getElementById('main--label')
+                    $label.textContent = 'Error! Email not sent!'
+                    await delay(3000)
+                    $label.textContent = 'Click to send messages'
+                }
             });
         });
         const $button = document.getElementById('main--button')
