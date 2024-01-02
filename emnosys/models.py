@@ -15,3 +15,34 @@ class Contact(models.Model):
     message = models.TextField(null=False)
     email = models.EmailField(max_length=99, null=False)
     contactowner = models.ForeignKey(User, on_delete=models.CASCADE)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
