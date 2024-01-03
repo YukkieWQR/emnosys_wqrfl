@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap');
+* {
+    font-family: "Comfortaa", sans-serif;
+}
+body {
+    background: #535353;
+    background-size: 100%;
+    overflow: hidden;
+}
+.email-notice {
+    display: flex;
+    background-color: rgba(82,185,213,0.7);
+    border: solid rgba(0,0,0,0);
+    border-radius: 15px;
+    padding: 20px 30px 20px 30px;
+    color: black;
+    font-size: large;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 20px 1px rgba(82,185,213,0.7);
+}
+.waves {
+    background: url(../images/waves.png)no-repeat;
+    display: block;
+    background-size: auto;
+    position: absolute;
+    z-index: -1;
+    float: left;
+    left: 0;
+    background-size: 100% 800px;
+    width: 100%;
+    top: 280px;
+    min-width: 1000px;
+    min-height: 800px;
+    overflow-y: hidden;
+}

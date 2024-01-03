@@ -53,6 +53,9 @@ body {
 .username {
     margin-bottom: 10px;
 }
+.contact-list {
+    margin-bottom: 20px;
+}
 .contact {
     padding: 20px;
     display: flex;
@@ -83,11 +86,29 @@ body {
     min-height: 800px;
     overflow-y: hidden;
 }
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+}
+.go-to-home a {
+    opacity: 50%;
+    display: flex;
+    align-items: end;
+    flex-direction: row;
+    justify-content: left;
+    transition: opacity .3s;
+}
+.go-to-home a:hover {
+    opacity: 1;
+}
 .signout a {
     text-decoration: none;
     color: black;
     opacity: 50%;
-    display: flex;
+    display: inline-flex;
+    flex-direction: row;
     align-items: end;
     justify-content: right;
     transition: opacity .3s;

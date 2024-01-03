@@ -10,7 +10,7 @@
 </head>
 <body>
     <div class="head">
-        <a href="/addcontact/" class="add-contacts">Add Contacts</a>
+        <a href="/addcontact/" class="add-contacts">Add Contact</a>
     </div>
     <div class="main">
         <div class="username--photo">
@@ -66,18 +66,16 @@
                 console.error(error)
             })
         </script>
-        <div class="signout">
-            <a href="https://">Sign Out</a>
+        <div class="footer">
+            <div class="go-to-home">
+                <a href="/"><img src="../../static/emnosys/images/arrowheads-of-thin-outline-to-the-left.png" alt="arrow" width="25px"></a>
+            </div>
+            <div class="signout">
+                <a href="/signout/">Sign Out</a>
+            </div>
         </div>
     </div>
     <div class="waves">
     </div>
-    <script>
-        $('.signout').click(function() {
-            $.ajax({
-                url: '/signout/',
-            });
-        });
-    </script>
 </body>
 </html>
