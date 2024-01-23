@@ -16,6 +16,7 @@ import json
 import uuid
 from django.views.generic import TemplateView
 
+
 ####################################################
 
 
@@ -107,11 +108,14 @@ def SigninView(request):
             return redirect('signin')
     return render(request, "emnosys/signin.html")
 
+
 ################################################
+
 
 def SignoutView(request):
     logout(request)
     return redirect('home')
+
 
 ######################################################
 
@@ -124,7 +128,9 @@ class PersonalPageView(TemplateView):
         context['css_file'] = 'styles.css'
         return context
 
+
 ####################################################
+
 
 @login_required
 def ContactCreateView(request):
